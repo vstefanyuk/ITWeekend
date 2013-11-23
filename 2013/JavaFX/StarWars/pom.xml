@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.softserve.itw2013.javafx.hello</groupId>
+    <artifactId>star-wars</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <developers>
+        <developer>
+            <name>V.Stefanyuk</name>
+            <email>vstefanyuk@gmail.com</email>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>Softserve</name>
+    </organization>
+
+    <build>
+        <finalName>StarWars</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <mainClass>com.softserve.itw2013.javafx.hello.StarWars</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>native</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>native</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>javafx</artifactId>
+            <version>${javafx.version}</version>
+            <systemPath>${java.home}/lib/jfxrt.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <javafx.version>2.2</javafx.version>
+    </properties>
+
+</project>

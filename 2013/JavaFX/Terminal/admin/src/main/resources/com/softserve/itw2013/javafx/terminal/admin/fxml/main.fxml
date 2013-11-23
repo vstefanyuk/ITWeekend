@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:id="root" maxHeight="-1.0" maxWidth="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/2.2"
+            fx:controller="com.softserve.itw2013.javafx.terminal.admin.controller.MainController">
+    <fx:define>
+        <fx:include fx:id="logon" source="logon.fxml"/>
+    </fx:define>
+    <center>
+        <TabPane fx:id="tbpContent" prefHeight="800.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" visible="true">
+            <tabs>
+                <Tab text="Terminals">
+                    <content>
+                        <TableView fx:id="tbvTerminals" prefHeight="200.0" prefWidth="200.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="ID">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="id"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="194.0" text="uuid">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="uuid"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="237.0" text="Name">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="name"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="312.0" text="Address">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="address"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+                <Tab text="Accounts">
+                    <content>
+                        <TableView fx:id="tbvAccounts" prefHeight="-1.0" prefWidth="-1.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="ID">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="id"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="195.0" text="uuid">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="uuid"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="246.0" text="Owner name">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="ownerName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="75.0" text="Balance">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="balance"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+                <Tab text="Cash transactions">
+                    <content>
+                        <TableView fx:id="tbvCashTransactions" prefHeight="-1.0" prefWidth="-1.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="ID">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="id"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="180.0" text="Terminal"
+                                             fx:id="tbcCashTransactionsTerminal"/>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="173.0" text="Account"
+                                             fx:id="tbcCashTransactionsAccount"/>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="123.0" text="Withdrawn">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="withdrawn"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="96.0" text="Amount">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="amount"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="96.0" text="Result balance">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="resultBalance"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <top>
+        <VBox prefHeight="-1.0" prefWidth="-1.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#logon" text="Logon" fx:id="mniLogon"/>
+                                <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" fx:id="mniLogout"/>
+                                <SeparatorMenuItem mnemonicParsing="false"/>
+                                <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="View">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#refresh" text="Refresh"
+                                          fx:id="mniRefresh"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#about" text="About"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar>
+                    <items>
+                        <Button fx:id="btnLogon" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false"
+                                onAction="#logon">
+                            <graphic>
+                                <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/logon.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="btnRefresh" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false"
+                                onAction="#refresh">
+                            <graphic>
+                                <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/refresh.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </items>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+</BorderPane>

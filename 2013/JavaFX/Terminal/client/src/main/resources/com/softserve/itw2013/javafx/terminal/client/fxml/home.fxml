@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="root" padding="$x1" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2"
+            fx:controller="com.softserve.itw2013.javafx.terminal.client.controller.HomeController">
+    <fx:define>
+        <fx:include fx:id="withdraw" source="withdraw.fxml"/>
+    </fx:define>
+    <center>
+        <GridPane alignment="TOP_LEFT" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                  prefHeight="950.0" prefWidth="1580.0" vgap="10.0">
+            <children>
+                <Button alignment="CENTER" contentDisplay="LEFT" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMoney" prefHeight="310.0"
+                        prefWidth="520.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Money.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                        onAction="#onNotImplemented" prefHeight="310.0" prefWidth="520.0" text=""
+                        GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Utilities.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                        onAction="#onNotImplemented" prefHeight="310.0" prefWidth="520.0" text=""
+                        GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Volya.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                        onAction="#onNotImplemented" prefHeight="310.0" prefWidth="520.0" text=""
+                        GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/MTS.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                        onAction="#onNotImplemented" prefHeight="310.0" prefWidth="520.0" text=""
+                        GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Life.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                        onAction="#onNotImplemented" prefHeight="310.0" prefWidth="520.0" text=""
+                        GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Skype.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                        onAction="#onNotImplemented" prefHeight="310.0" prefWidth="520.0" text=""
+                        GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Unistream.jpg"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                        onAction="#onNotImplemented" prefHeight="310.0" prefWidth="520.0" text=""
+                        GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Ukrzaliznicya.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                        onAction="#onNotImplemented" prefHeight="310.0" prefWidth="520.0" text=""
+                        GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Tickets.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <BorderPane.margin>
+                <Insets top="10.0" fx:id="x1"/>
+            </BorderPane.margin>
+        </GridPane>
+    </center>
+    <top>
+        <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0">
+            <children>
+                <Label fx:id="lblOwnerName" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text=""
+                       textFill="#0083cc" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="Tahoma Bold" size="40.0"/>
+                    </font>
+                </Label>
+                <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#close"
+                        text="">
+                    <graphic>
+                        <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/close.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+</BorderPane>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="root" maxHeight="-1.0" maxWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/2.2"
+            fx:controller="com.softserve.itw2013.javafx.terminal.client.controller.WithdrawController">
+    <center>
+        <VBox alignment="CENTER" spacing="20.0">
+            <HBox alignment="TOP_CENTER" prefHeight="-1.0" prefWidth="-1.0">
+                <children>
+                    <Label maxWidth="-1.0" text="Your balance is: ">
+                        <font>
+                            <Font name="Tahoma" size="40.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="lblBalance" text="0" textFill="#009918">
+                        <font>
+                            <Font name="Tahoma Bold" size="40.0" fx:id="x1"/>
+                        </font>
+                    </Label>
+                    <Label maxWidth="-1.0" text=" y.e.">
+                        <font>
+                            <Font name="Tahoma" size="40.0"/>
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <Label text="Specify withdraw amount" textFill="#3354ff">
+                <font>
+                    <Font size="40.0"/>
+                </font>
+            </Label>
+            <GridPane hgap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="800.0"
+                      vgap="50.0">
+                <children>
+                    <Button fx:id="btnWithdraw1" font="$x1" onAction="#onWithdraw" prefHeight="-1.0" prefWidth="200.0"
+                            text="10" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0"/>
+                    <Button fx:id="btnWithdraw2" font="$x1" onAction="#onWithdraw" prefHeight="-1.0" prefWidth="200.0"
+                            text="200" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="0"/>
+                    <Button fx:id="btnWithdraw3" font="$x1" onAction="#onWithdraw" prefHeight="-1.0" prefWidth="200.0"
+                            text="20" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="1"/>
+                    <Button fx:id="btnWithdraw4" font="$x1" onAction="#onWithdraw" prefHeight="-1.0" prefWidth="200.0"
+                            text="500" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1"/>
+                    <Button fx:id="btnWithdraw5" font="$x1" onAction="#onWithdraw" prefHeight="-1.0" prefWidth="200.0"
+                            text="50" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="2"/>
+                    <Button fx:id="btnWithdraw6" font="$x1" onAction="#onWithdraw" prefHeight="-1.0" prefWidth="200.0"
+                            text="1000" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2"/>
+                    <Button fx:id="btnWithdraw7" font="$x1" onAction="#onWithdraw" prefHeight="-1.0" prefWidth="200.0"
+                            text="100" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="3"/>
+                    <Button font="$x1" onAction="#onEscape" prefHeight="-1.0" prefWidth="200.0" text="ESC"
+                            textFill="#ff3d00" GridPane.columnIndex="1" GridPane.halignment="RIGHT"
+                            GridPane.rowIndex="3"/>
+                </children>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+            </GridPane>
+        </VBox>
+    </center>
+</BorderPane>

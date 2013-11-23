@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+JavaFX-Version: 2.2
+JavaFX-Application-Class: com.softserve.itw2013.javafx.terminal.admin.
+ TerminalAdminApp
+JavaFX-Class-Path: lib/shared-1.0-SNAPSHOT.jar lib/hibernate-jpa-2.0-a
+ pi-1.0.1.Final.jar lib/commons-lang3-3.1.jar lib/slf4j-log4j12-1.7.5.
+ jar lib/slf4j-api-1.7.5.jar lib/log4j-1.2.17.jar lib/spring-context-3
+ .2.4.RELEASE.jar lib/spring-aop-3.2.4.RELEASE.jar lib/spring-beans-3.
+ 2.4.RELEASE.jar lib/spring-core-3.2.4.RELEASE.jar lib/spring-expressi
+ on-3.2.4.RELEASE.jar lib/spring-security-core-3.1.4.RELEASE.jar lib/a
+ opalliance-1.0.jar lib/spring-security-remoting-3.1.4.RELEASE.jar lib
+ /jfxmessagebox-1.1.0.jar lib/commons-beanutils-1.8.3.jar lib/commons-
+ logging-1.1.1.jar lib/jfxrt-controls.jar lib/jfxrt-graphics.jar
+Created-By: JavaFX Packager
+Main-Class: com/javafx/main/Main
+

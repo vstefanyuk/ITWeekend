@@ -9,3 +9,11 @@
 /2013/JavaFX/Terminal/shared/target
 
 /2013/JavaFX/Terminal/server/target
+
+/2013/JavaFX/StarWars/*.iml
+
+/2013/JavaFX/Terminal/*.iml
+
+/2013/JavaFX/Terminal/admin/*.iml
+
+/2013/JavaFX/Terminal/server/*.iml

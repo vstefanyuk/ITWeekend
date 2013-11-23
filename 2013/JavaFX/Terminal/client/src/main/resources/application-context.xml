@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:/com/softserve/itw2013/javafx/terminal/client/config.properties</value>
+                <value>file:${terminalClient.config.file}</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetClass" value="org.springframework.security.core.context.SecurityContextHolder"/>
+        <property name="targetMethod" value="setStrategyName"/>
+        <property name="arguments">
+            <list>
+                <value>MODE_GLOBAL</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetObject">
+            <bean class="org.springframework.security.core.context.SecurityContextHolder" factory-method="getContext"/>
+        </property>
+        <property name="targetMethod" value="setAuthentication"/>
+        <property name="arguments">
+            <list>
+                <bean class="org.springframework.security.authentication.UsernamePasswordAuthenticationToken">
+                    <constructor-arg>
+                        <value>${terminalServer.username}</value>
+                    </constructor-arg>
+                    <constructor-arg>
+                        <value>${terminalServer.password}</value>
+                    </constructor-arg>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="terminalUuid" class="java.lang.String">
+        <constructor-arg>
+            <value>${terminal.uuid}</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="terminalDispatcher" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="rmi://${terminalServer.host}:${terminalServer.port}/TerminalDispatcher"/>
+        <property name="serviceInterface" value="com.softserve.itw2013.javafx.terminal.TerminalDispatcher"/>
+        <property name="lookupStubOnStartup" value="false"/>
+        <property name="refreshStubOnConnectFailure" value="true"/>
+        <property name="remoteInvocationFactory">
+            <bean class="org.springframework.security.remoting.rmi.ContextPropagatingRemoteInvocationFactory"/>
+        </property>
+    </bean>
+
+    <beans profile="localCardManager">
+        <bean id="cardManager" class="com.softserve.itw2013.javafx.terminal.cardman.CardManagerImpl">
+            <constructor-arg>
+                <value>${cardManager.cardTerminalName}</value>
+            </constructor-arg>
+        </bean>
+    </beans>
+
+    <beans profile="remoteCardManager">
+        <bean id="cardManager" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+            <property name="serviceUrl" value="rmi://${terminalServer.host}:${terminalServer.port}/CardManager"/>
+            <property name="serviceInterface" value="com.softserve.itw2013.javafx.terminal.cardman.CardManager"/>
+            <property name="lookupStubOnStartup" value="false"/>
+            <property name="refreshStubOnConnectFailure" value="true"/>
+        </bean>
+    </beans>
+
+</beans>
