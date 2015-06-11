@@ -1,0 +1,1 @@
+netcat\nc64.exe -L -p 5001 | "mplayer\mplayer.exe" -vo direct3d -fps 31 -cache 1024 -

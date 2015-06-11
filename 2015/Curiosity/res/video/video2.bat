@@ -1,0 +1,1 @@
+netcat\nc64.exe 192.168.0.102 1199 | "mplayer\mplayer.exe" -fps 31 -cache 1024 -

@@ -1,0 +1,30 @@
+l93d:
+
+e03 GPIO_17 - i2
+e04 GPIO_18 - i3
+e05 GPIO_19 - i1
+e06 GPIO_20 - i4
+p12 GPIO_01 - PWM Enable 1/2
+VSS - l5v
+VS - p5v
+
+hcsr04:
+
+p16 GPIO_04 - Trig 
+p18 GPIO_05 - Echo
+VCC - l5v
+
+Sound:
+
+p07 GPIO_07 - VCC
+p12 GPIO_01 - PWM (Engine)
+
+Light:
+
+p22 GPIO_06 - low = On
+
+Status:
+
+p11 GPIO_00 - B
+p13 GPIO_02 - G
+p15 GPIO_03 - R

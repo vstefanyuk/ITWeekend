@@ -17,3 +17,13 @@
 /2013/JavaFX/Terminal/admin/*.iml
 
 /2013/JavaFX/Terminal/server/*.iml
+/2015/Curiosity/.idea
+/2015/Curiosity/*.iml
+/2015/Curiosity/client/*.iml
+/2015/Curiosity/client/target
+/2015/Curiosity/raspy/target
+/2015/Curiosity/server/target
+/2015/Curiosity/shared/target
+/2015/Curiosity/server/*.iml
+/2015/Curiosity/raspy/*.iml
+/2015/Curiosity/shared/*.iml

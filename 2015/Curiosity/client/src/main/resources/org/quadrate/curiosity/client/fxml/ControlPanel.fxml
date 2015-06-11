@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #b3b3b3, #4d4d4d);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.quadrate.curiosity.client.controller.ControlPanelController">
+    <center>
+        <BorderPane BorderPane.alignment="CENTER">
+            <top>
+                <BorderPane BorderPane.alignment="CENTER">
+                    <left>
+                        <HBox spacing="4.0" BorderPane.alignment="CENTER_LEFT">
+                            <children>
+                                <Pane prefHeight="64.0" prefWidth="64.0">
+                                    <children>
+                                        <SwingNode fx:id="swnBeam" />
+                                    </children>
+                                </Pane>
+                                <Pane prefHeight="64.0" prefWidth="64.0">
+                                    <children>
+                                        <SwingNode fx:id="swnSpeaker" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                    </left>
+                    <center>
+                        <Pane prefHeight="64.0" prefWidth="370.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <SwingNode fx:id="swnRadar" />
+                            </children>
+                            <BorderPane.margin>
+                                <Insets left="4.0" right="4.0" />
+                            </BorderPane.margin>
+                        </Pane>
+                    </center>
+                    <right>
+                        <HBox spacing="4.0" BorderPane.alignment="CENTER_RIGHT">
+                            <children>
+                                <Pane prefHeight="64.0" prefWidth="64.0">
+                                    <children>
+                                        <SwingNode fx:id="swnCamera" />
+                                    </children>
+                                </Pane>
+                                <Pane prefHeight="64.0" prefWidth="64.0">
+                                    <children>
+                                        <SwingNode fx:id="swnMicrophone" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </HBox>
+                    </right>
+                    <BorderPane.margin>
+                        <Insets bottom="5.0" />
+                    </BorderPane.margin>
+                </BorderPane>
+            </top>
+            <center>
+                <TitledPane alignment="CENTER" collapsible="false" text="Display">
+                    <content>
+                        <ImageView fx:id="imvDisplay" fitHeight="360.0" fitWidth="640.0">
+                            <image>
+                                <Image url="@../img/curiosity.png" />
+                            </image>
+                        </ImageView>
+                    </content>
+                    <font>
+                        <Font name="Neuropol" size="12.0" />
+                    </font>
+                </TitledPane>
+            </center>
+        </BorderPane>
+    </center>
+    <right>
+        <GridPane hgap="4.0" vgap="4.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" prefWidth="144.0" />
+                <ColumnConstraints hgrow="NEVER" prefWidth="144.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints prefHeight="112.0" vgrow="NEVER" />
+                <RowConstraints prefHeight="144.0" vgrow="NEVER" />
+                <RowConstraints prefHeight="192.0" vgrow="NEVER" />
+            </rowConstraints>
+            <children>
+                <VBox spacing="82.0" BorderPane.alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <children>
+                        <Pane prefHeight="76.0" prefWidth="144.0">
+                            <children>
+                                <SwingNode fx:id="swnSpeedometer" />
+                            </children>
+                        </Pane>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/brainBattery.png" />
+                                    </image>
+                                </ImageView>
+                                <Pane prefHeight="64.0" prefWidth="64.0">
+                                    <children>
+                                        <SwingNode fx:id="swnBrainBattery" />
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="8.0" top="2.0" />
+                                    </HBox.margin>
+                                </Pane>
+                            </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox spacing="82.0" BorderPane.alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <children>
+                        <Pane prefHeight="76.0" prefWidth="144.0">
+                            <children>
+                                <SwingNode fx:id="swnThermometer" />
+                            </children>
+                        </Pane>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/engineBattery.png" />
+                                    </image>
+                                </ImageView>
+                                <Pane prefHeight="64.0" prefWidth="64.0">
+                                    <children>
+                                        <SwingNode fx:id="swnEngineBattery" />
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="8.0" top="2.0" />
+                                    </HBox.margin>
+                                </Pane>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Pane prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <children>
+                        <SwingNode fx:id="swnCompass" />
+                    </children>
+                </Pane>
+                <Pane prefHeight="144.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <SwingNode fx:id="swnGyroscope" />
+                    </children>
+                </Pane>
+                <AnchorPane prefHeight="192.0" prefWidth="292.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                    <children>
+                        <Pane prefHeight="64.0" prefWidth="64.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <SwingNode fx:id="swnLeftEngine" />
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="64.0" prefWidth="64.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <SwingNode fx:id="swnRightEngine" />
+                            </children>
+                        </Pane>
+                        <Circle fx:id="crlJoystick" onMouseDragged="#onJoystickMouseDragged" onMouseExited="#onJoystickMouseExited" onMouseMoved="#onJoystickMouseMoved" onMousePressed="#onJoystickMousePressed" onMouseReleased="#onJoystickMouseReleased" radius="80.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="64.0" AnchorPane.topAnchor="18.0">
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="BLACK" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <PointLight color="WHITE" translateZ="-64.0" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="96.0" />
+                        <Sphere fx:id="sphJoystick" mouseTransparent="true" radius="32.0" AnchorPane.leftAnchor="112.0" AnchorPane.topAnchor="66.0" />
+                        <Pane prefHeight="32.0" prefWidth="32.0" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="16.0">
+                            <children>
+                                <SwingNode fx:id="swnStatusLed" />
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="64.0" prefWidth="64.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                            <children>
+                                <SwingNode fx:id="swnSettings" />
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="64.0" prefWidth="64.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <SwingNode fx:id="swnConnect" />
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" />
+            </BorderPane.margin>
+        </GridPane>
+    </right>
+    <padding>
+        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+    </padding>
+</BorderPane>
